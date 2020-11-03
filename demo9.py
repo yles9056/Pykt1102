@@ -8,7 +8,7 @@ data1 = datasets.make_regression(10, 6, noise=10)
 dataAll = data1[0]
 print(dataAll)
 
-r1 = sorted(dataAll, key=lambda tup: tup[0])
+r1 = sorted(dataAll, key=lambda tup: tup[0])  # 用輸入陣列dataAll每個項目tup的第0項排序
 r2 = sorted(dataAll, key=lambda tup: tup[1])
 r6 = sorted(dataAll, key=lambda tup: tup[5])
 pprint(r1)

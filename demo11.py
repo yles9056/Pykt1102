@@ -1,3 +1,5 @@
+# 將feature變為多項式
+
 import numpy as np
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import PolynomialFeatures
@@ -22,7 +24,12 @@ degree: 級數
 include_bias: 是否包含常數項
 """
 transformer.fit(x)
-x_ = transformer.transform(x)  # x_: 轉換後的x
+x_ = transformer.transform(x)
+"""
+x_: 轉換後的x
+x: [[5], [10], [15]...]
+x_: [[5, 25], [10, 100], [15, 225]...]
+"""
 print(f"x shape={x.shape},(x**2)x_ shape={x_.shape}")
 regression2 = LinearRegression().fit(x_, y)
 score2 = regression2.score(x_, y)
